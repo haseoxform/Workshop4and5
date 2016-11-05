@@ -1,4 +1,4 @@
-import {unixTimeToString} from '../util.js'
+import {unixTimeToString} from '../util.js';
 import React from 'react';
 
 export default class Comment extends React.Component {

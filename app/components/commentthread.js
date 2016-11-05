@@ -1,5 +1,6 @@
 import React from 'react';
 import CommentEntry from './commententry';
+
 export default class CommentThread extends React.Component {
 render() {
 return (
@@ -7,12 +8,13 @@ return (
 {React.Children.map(this.props.children, function(child) {
 return (
 <li className="media">
+
 {child}
 </li>
 )
 })}
 <li className="media">
-<CommentEntry />
+<CommentEntry onPost={this.props.onPost} />
 </li>
 </ul>
 )
