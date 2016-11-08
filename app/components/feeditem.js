@@ -75,7 +75,8 @@ render() {
   var likeButtonText = "Like";
 if (this.didUserLike()) {
 likeButtonText = "Unlike";
-}
+}
+
  var data = this.state;
  var contents;
  switch(data.type) {
@@ -116,7 +117,10 @@ return (
 })}
   </StatusUpdate>
   );
-
+  <a href="#" onClick={(e) => this.handleLikeClick(e)}>
+  <span className="glyphicon glyphicon-thumbs-up"></span>
+  {likeButtonText}
+  </a>
   break;
   default:
   throw new Error("Unknown FeedItem: " + data.type);
@@ -130,10 +134,9 @@ return (
   <div className="col-md-12">
   <ul className="list-inline">
   <li>
-    <a href="#" onClick={(e) => this.handleLikeClick(e)}>
-    <span className="glyphicon glyphicon-thumbs-up"></span>
-    {likeButtonText}
-    </a>
+  <a href="#">
+  <span className="glyphicon glyphicon-thumbs-up">
+  </span> Like</a>
   </li>
   <li>
   <a href="#">
